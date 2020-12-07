@@ -2,4 +2,4 @@
 - CRUD de categorías
 - CRUD de productos 
 
-Creado con Laravel - React
+Creado con Laravel 8- React
