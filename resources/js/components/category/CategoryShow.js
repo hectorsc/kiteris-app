@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchData } from '../../api/crudActions';
+import LoadingData from '../LoadingData';
 
 class CategoryShow extends React.Component {
 
@@ -47,7 +48,7 @@ class CategoryShow extends React.Component {
             </div>
             <div className="content"> 
                <div className="my-list-divided ui list divided segment" style={{ padding: '10px'}} >
-                  {this.state.loading ? 'loading...' : this.renderList()}
+                  {this.state.loading ? <LoadingData /> : this.renderList()}
                   {this.state.result}
                </div>
             </div>
