@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProduct } from '../../api/productActions';
+import { fetchData } from '../../api/crudActions';
 
 class ProductShow extends React.Component {
 
@@ -13,7 +13,7 @@ class ProductShow extends React.Component {
    }
 
    async componentDidMount() {
-      const response = await fetchProduct(this.props.match.params.id);
+      const response = await fetchData('product', this.props.match.params.id);
       this.setState({ product: response, loading: false });
    }
 

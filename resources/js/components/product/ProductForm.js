@@ -54,7 +54,7 @@ class ProductForm extends React.Component {
                   />
                   {
                      errors.name && 
-                        <div className="ui pointing red basic label">
+                        <div className="ui pointing red basic label prompt">
                            {errors.name}
                         </div>
                   }
@@ -68,7 +68,7 @@ class ProductForm extends React.Component {
                   />
                   {
                      errors.REF && 
-                        <div className="ui pointing red basic label">
+                        <div className="ui pointing red basic label prompt">
                            {errors.REF}
                         </div>
                   }
@@ -85,7 +85,7 @@ class ProductForm extends React.Component {
                   />
                   {
                      errors.price && 
-                        <div className="ui pointing red basic label">
+                        <div className="ui pointing red basic label prompt">
                            {errors.price}
                         </div>
                   }
@@ -99,7 +99,7 @@ class ProductForm extends React.Component {
                   />
                   {
                      errors.offer_price && 
-                        <div className="ui pointing red basic label">
+                        <div className="ui pointing red basic label prompt">
                            {errors.offer_price}
                         </div>
                   }
@@ -116,7 +116,7 @@ class ProductForm extends React.Component {
                </select>
                {
                   errors.category_id && 
-                     <div className="ui pointing red basic label">
+                     <div className="ui pointing red basic label prompt">
                         {errors.category_id}
                      </div>
                }

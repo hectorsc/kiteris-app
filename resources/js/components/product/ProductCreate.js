@@ -1,19 +1,17 @@
 import React from 'react';
 import ProductForm from './ProductForm';
-import { createProduct } from '../../api/productActions';
-import { fetchCategories } from '../../api/categoryActions';
-
+import { create, fetchAllData } from '../../api/crudActions';
 
 class ProductCreate extends React.Component {
 
    state = { categories: [], categoryEmpty: false }
 
    onSubmit = async formValues => {
-      return await createProduct(formValues);
+      return await create('product', formValues);
    }
 
    async componentDidMount () {
-      const response = await fetchCategories();
+      const response = await fetchAllData('category');
       this.setState({ categories: response, categoryEmpty: true }); 
    }
 
@@ -31,7 +29,7 @@ class ProductCreate extends React.Component {
                      <div className="header">
                         ATENCIÓN! NO EXISTEN CATEGORÍAS.
                      </div>
-                     <p>Para poder crear un producto tiene que crear primero una categorías.</p>
+                     <p>Para poder crear un producto tiene que crear primero una categoría.</p>
                   </div>
             }
          </div>

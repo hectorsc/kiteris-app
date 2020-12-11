@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductForm from './ProductForm';
-import { fetchProduct, editProduct } from '../../api/productActions';
-import { fetchCategories } from '../../api/categoryActions';
+import { fetchAllData, fetchData, edit } from '../../api/crudActions';
 import _ from 'lodash';
 
 class ProductEdit extends React.Component {
@@ -12,8 +11,8 @@ class ProductEdit extends React.Component {
    }
 
    componentDidMount = async () => {
-      const product = await fetchProduct(this.props.match.params.id);
-      const categories = await fetchCategories();
+      const product = await fetchData('product', this.props.match.params.id);
+      const categories = await fetchAllData('category');
       this.setState({ 
          product: _.pick(product, 'id', 'user_id', 'category_id', 'name', 'REF', 'price', 'offer_price'),
          categories: categories 
@@ -21,7 +20,7 @@ class ProductEdit extends React.Component {
    }
 
    onSubmit = async formValues => {
-      return await editProduct(this.state.product.id, formValues);
+      return await edit('product', this.state.product.id, formValues);
    }
 
    render() {

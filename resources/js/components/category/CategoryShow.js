@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchCategory } from './../../api/categoryActions';
+import { fetchData } from '../../api/crudActions';
 
 class CategoryShow extends React.Component {
 
@@ -13,7 +13,7 @@ class CategoryShow extends React.Component {
    }
 
    async componentDidMount() {
-      const response = await fetchCategory(this.props.match.params.id);
+      const response = await fetchData('category', this.props.match.params.id);
       let result = response.products.length == 0 ? 'no hay resultados...': '';
       this.setState({ 
          category: response, 

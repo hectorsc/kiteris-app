@@ -1,5 +1,4 @@
 import React from 'react';
-// import Validator from '../Validator';
 import history from '../../history';
 
 class CategoryForm extends React.Component {
@@ -55,7 +54,7 @@ class CategoryForm extends React.Component {
                   />
                   {
                      errors.name &&
-                        <div className="ui pointing red basic label">
+                        <div className="ui pointing red basic label prompt">
                            {errors.name}
                         </div>
                   }

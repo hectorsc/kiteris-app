@@ -1,12 +1,12 @@
 import React from 'react';
 import CategoryForm from './CategoryForm';
-import { createCategory } from './../../api/categoryActions';
+import { create } from '../../api/crudActions';
 
 
 class CategoryCreate extends React.Component {
 
    onSubmit = async formValues => {
-      return await createCategory(formValues);
+      return await create('category', formValues);
    }
 
    render() {
