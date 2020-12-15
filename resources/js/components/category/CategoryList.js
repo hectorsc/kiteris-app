@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchAllData } from '../../api/crudActions';
-import DataTable from '../DataTable';
+import DataTable from '../datatable/DataTable';
+import { columns, sweetAlertCategory } from '../datatable/config';
 
 class CategoryList extends React.Component {
 
@@ -19,21 +20,14 @@ class CategoryList extends React.Component {
             <div className="card-body">
                <DataTable 
                   data={this.fetchCategories} 
+                  columns={columns}
                   path={'category'}
-                  sweetAlert={sweetAlert} 
+                  sweetAlert={sweetAlertCategory} 
                />
             </div>
          </div> 
       );
    }
 }
-
-export const sweetAlert = {
-   title: '¿Estás seguro de eliminar la categoría ',
-   finalTitle: '?',
-   text: 'Una vez eliminada, ¡no podrá recuperar esta categoría!',
-   exception: 'La categoría ',
-   finalException: ' no se puede eliminar porque tiene productos asociados. Por favor, elimine antes los productos que tengan esta categoría.'
-};
 
 export default CategoryList;

@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // REACT
 Route::apiResource('/category', 'Api\CategoryController');
 Route::apiResource('/product', 'Api\ProductController');
+Route::apiResource('/tag', 'Api\TagController');
+Route::apiResource('/post', 'Api\PostController');

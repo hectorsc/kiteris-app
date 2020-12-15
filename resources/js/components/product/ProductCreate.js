@@ -18,10 +18,13 @@ class ProductCreate extends React.Component {
    render() {
       const { categories, categoryEmpty } = this.state;
       return (
-         <div> 
+         <React.Fragment> 
             <h1 className="ui header">Crear Producto</h1>
             <div className="ui segment">
-               <ProductForm onSubmit={this.onSubmit} categories={categories} />
+               <ProductForm 
+                  onSubmit={this.onSubmit} 
+                  categories={categories} 
+               />
             </div> 
             {
                categories.length == 0 && categoryEmpty &&
@@ -32,7 +35,7 @@ class ProductCreate extends React.Component {
                      <p>Para poder crear un producto tiene que crear primero una categoría.</p>
                   </div>
             }
-         </div>
+         </React.Fragment>
       );
    }
 };

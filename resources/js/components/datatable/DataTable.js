@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoadingData from './LoadingData';
-import { sweetAlert } from '../sweetAlert';
+import LoadingData from '../LoadingData';
+import { sweetAlert } from './sweetAlert';
 
 class DataTable extends React.Component {
 
@@ -40,7 +40,8 @@ class DataTable extends React.Component {
    }
 
    renderList() {
-      const { path } = this.props; const { data } = this.state;
+      const { path, columns, sweetAlert } = this.props; 
+      const { data } = this.state;
       return data.map(data => {
          return(
             <div className="item" key={data.id}>
@@ -53,12 +54,18 @@ class DataTable extends React.Component {
                   </Link>
                   <button 
                      className="ui icon button negative"
-                     onClick={() => this.alert(data.id, data.name)}
+                     onClick={() => this.alert(data.id, data[sweetAlert.selector])}
                   >
                      <i className="trash alternate icon"></i>
                   </button>
                </div>
-               <div className="content" style={{ paddingTop: '10px' }}>{data.name}</div>
+               {
+                  columns.map((column, id) => 
+                     <div key={id} className="content" style={{ paddingTop: '10px' }}>
+                        {data[column.selector]}
+                     </div>
+                  )
+               }
             </div>
          );
       })

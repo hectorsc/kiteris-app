@@ -6,8 +6,12 @@ export const fetchAllData = async path => {
 };
 
 export const fetchData = async (path, id) => {
-   const response = await axios.get(`/api/${path}/${id}`);
-   return response.data;
+   try {
+      const response = await axios.get(`/api/${path}/${id}`);
+      return response.data;
+   } catch (e) {
+      return e.response.data;
+   }
 };
 
 export const create = async (path, formValues) => {

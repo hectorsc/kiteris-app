@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchAllData } from '../../api/crudActions';
-import DataTable from '../DataTable';
+import DataTable from '../datatable/DataTable';
+import { columns, sweetAlertProduct } from '../datatable/config';
 
 class ProductList extends React.Component {
    
@@ -18,21 +19,15 @@ class ProductList extends React.Component {
             </div>
             <div className="card-body">
                <DataTable 
-                  data={this.fetchProducts} 
+                  data={this.fetchProducts}
+                  columns={columns}
                   path={'product'}
-                  sweetAlert={sweetAlert} 
+                  sweetAlert={sweetAlertProduct} 
                />
             </div>
          </div> 
       );
    } 
 }
-
-export const sweetAlert = {
-   title: '¿Estás seguro de eliminar el producto ',
-   finalTitle: '?',
-   text: 'Una vez eliminado, ¡no podrá recuperar este producto!',
-   exception: 'Ha ocurrido un error, por favor intentelo de nuevo.'
-};
 
 export default ProductList;

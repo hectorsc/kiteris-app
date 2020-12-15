@@ -1,7 +1,7 @@
 import React from 'react';
 import history from '../../history';
 
-class CategoryForm extends React.Component {
+class TagForm extends React.Component {
 
    constructor(props) {
       super(props);
@@ -37,14 +37,14 @@ class CategoryForm extends React.Component {
          this.setState({ errors: response.errors})
          return
       }
-      history.push('/category');
+      history.push('/tag');
    }
 
    render() {
       const {errors, fields} = this.state;
       return (
          <form onSubmit={this.onFormSubmit} className="ui form">
-            <div className="field">
+            <div className=" field">
                <div className={errors.name ? 'field error' : 'field'}>
                   <label>Nombre:</label>
                   <input 
@@ -66,4 +66,4 @@ class CategoryForm extends React.Component {
    }
 };
 
-export default CategoryForm;
+export default TagForm;

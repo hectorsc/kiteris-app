@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import { deleted } from './api/crudActions';
+import { deleted } from '../../api/crudActions';
 
 export const sweetAlert = async (data) => {
    let result = false;

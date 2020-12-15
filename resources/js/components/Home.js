@@ -25,18 +25,18 @@ class Home extends React.Component {
                </div>
             </div>
             <div style={{ padding:'10px' }}></div>
-            {/* <div className="card">
+            <div className="card">
                <div className="card-header">NOTICIAS</div>
                <div className="card-body">
-                  <Link to='/category' className="btn btn-primary">
-                     Categorías
+                  <Link to='/tag' className="btn btn-primary">
+                     Etiquetas
                   </Link>
                   &nbsp;
-                  <Link to='/product' className="btn btn-primary">
+                  <Link to='/post' className="btn btn-primary">
                      Noticias
                   </Link>
                </div>
-            </div> */}
+            </div>
          </React.Fragment>
       ); 
    }
