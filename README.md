@@ -1,4 +1,4 @@
-# kiteris-app
+# React-app
 - CRUD de categorías
 - CRUD de productos 
 - CRUD de Noticias
