@@ -17,8 +17,7 @@ class TagController extends Controller
 
     public function store(TagRequest $request)
     {
-        $request->merge(['user_id' => $request->user()->id]);
-        Tag::create($request->all());
+        $request->user()->tags()->create($request->all());
         return response()->json(['message' => 'Created successfully'], 200);
     }
 

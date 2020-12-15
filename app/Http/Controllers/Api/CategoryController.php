@@ -17,8 +17,7 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
-        $request->merge(['user_id' => $request->user()->id]);
-        Category::create($request->all());
+        $request->user()->categories()->create($request->all());
         return response()->json(['message' => 'Created successfully'], 200);
     }
 

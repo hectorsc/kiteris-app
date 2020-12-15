@@ -19,12 +19,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $tags = $this->fixedTagsArray($request->tags);
-        $request->merge(['user_id' => $request->user()->id]);
-        $data = $request->except('tags');
-        $post = Post::create($data);
-        $id = $post->id;
-        $post = Post::find($id);
-        $post->tags()->attach($tags);
+        $request->user()->posts()->create($request->except('tags'))->tags()->attach($tags);
         return response()->json(['message' => 'Created successfully'], 200);
     }
 

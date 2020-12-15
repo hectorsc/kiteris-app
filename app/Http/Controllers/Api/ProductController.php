@@ -17,8 +17,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $request->merge(['user_id' => $request->user()->id]);
-        Product::create($request->all());
+        $request->user()->products()->create($request->all());
         return response()->json(['message' => 'Created successfully'], 200);
     }
 
