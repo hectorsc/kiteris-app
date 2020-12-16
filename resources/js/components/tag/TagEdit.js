@@ -13,7 +13,7 @@ class TagEdit extends React.Component {
 
    componentDidMount = async () => {
       const response = await fetchData('tag', this.props.match.params.id);
-      if (response.exception) history.push('/page-404');
+      response.exception && history.push('/page-404');
       this.setState({ response: _.pick(response, 'id', 'user_id', 'name') });
    }
 

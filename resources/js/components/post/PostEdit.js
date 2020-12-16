@@ -13,7 +13,7 @@ class PostEdit extends React.Component {
 
    componentDidMount = async () => {
       const post = await fetchData('post', this.props.match.params.id);
-      if (post.exception) history.push('/page-404');
+      post.exception && history.push('/page-404');
       const tags = await fetchAllData('tag');
       this.setState({ 
          post: _.pick(post, 'id', 'user_id', 'title', 'sub_title', 'body'),

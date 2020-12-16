@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchData } from '../../api/crudActions';
 import Spinner from '../Spinner';
+import history from '../../history';
 
 class PostShow extends React.Component {
 
@@ -15,6 +16,7 @@ class PostShow extends React.Component {
 
    async componentDidMount() {
       const response = await fetchData('post', this.props.match.params.id);
+      response.exception && history.push('/page-404');
       this.setState({ 
          post: response, 
          tags:response.tags,

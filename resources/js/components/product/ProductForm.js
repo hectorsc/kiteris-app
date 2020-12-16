@@ -42,7 +42,6 @@ class ProductForm extends React.Component {
 
    render() {
       const {errors, fields} = this.state;
-      console.log('en el produt form', fields)
       return (
          <form onSubmit={this.onFormSubmit} className="ui form">
             <div className="two fields">

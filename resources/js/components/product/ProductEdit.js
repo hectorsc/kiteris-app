@@ -13,7 +13,7 @@ class ProductEdit extends React.Component {
 
    componentDidMount = async () => {
       const product = await fetchData('product', this.props.match.params.id);
-      if (product.exception) history.push('/page-404');
+      product.exception && history.push('/page-404');
       const categories = await fetchAllData('category');
       this.setState({ 
          product: _.pick(product, 'id', 'user_id', 'category_id', 'name', 'REF', 'price', 'offer_price'),

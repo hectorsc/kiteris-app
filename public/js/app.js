@@ -9362,7 +9362,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/*!\n * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)\n * Copyright 2013-2020 Start Bootstrap\n * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)\n */\n\n #wrapper {\n    overflow-x: hidden;\n }\n\n#sidebar-wrapper {\n  min-height: 100vh;\n  margin-left: -15rem;\n  transition: margin .25s ease-out;\n  z-index: 9999;\n}\n\n#sidebar-wrapper .sidebar-heading {\n  padding: 0.875rem 1.25rem;\n  font-size: 1.2rem;\n}\n\n#sidebar-wrapper .list-group {\n  width: 15rem;\n}\n\n#page-content-wrapper {\n  min-width: 100vw;\n}\n\n#wrapper.toggled #sidebar-wrapper {\n  margin-left: 0;\n}\n\n@media (min-width: 768px) {\n  #sidebar-wrapper {\n    margin-left: 0;\n  }\n\n  #page-content-wrapper {\n    min-width: 0;\n    width: 100%;\n  }\n\n  #wrapper.toggled #sidebar-wrapper {\n    margin-left: -15rem;\n  }\n}\n", ""]);
+exports.push([module.i, "/*!\r\n * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)\r\n * Copyright 2013-2020 Start Bootstrap\r\n * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)\r\n */\r\n\r\n #wrapper {\r\n    overflow-x: hidden;\r\n }\r\n\r\n#sidebar-wrapper {\r\n  min-height: 100vh;\r\n  margin-left: -15rem;\r\n  transition: margin .25s ease-out;\r\n  z-index: 9999;\r\n}\r\n\r\n#sidebar-wrapper .sidebar-heading {\r\n  padding: 0.875rem 1.25rem;\r\n  font-size: 1.2rem;\r\n}\r\n\r\n#sidebar-wrapper .list-group {\r\n  width: 15rem;\r\n}\r\n\r\n#page-content-wrapper {\r\n  min-width: 100vw;\r\n}\r\n\r\n#wrapper.toggled #sidebar-wrapper {\r\n  margin-left: 0;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  #sidebar-wrapper {\r\n    margin-left: 0;\r\n  }\r\n\r\n  #page-content-wrapper {\r\n    min-width: 0;\r\n    width: 100%;\r\n  }\r\n\r\n  #wrapper.toggled #sidebar-wrapper {\r\n    margin-left: -15rem;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -83942,7 +83942,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83964,7 +83963,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 
 
 
@@ -84097,7 +84095,7 @@ __webpack_require__.r(__webpack_exports__);
 var NotFound = function NotFound() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "404 page not found"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We are sorry but the page you are looking for does not exist."));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "404 p\xE1gina no encontrada"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lo sentimos pero la p\xE1gina que busca no existe."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NotFound);
@@ -84326,7 +84324,7 @@ var CategoryEdit = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               response = _context.sent;
-              if (response.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
 
               _this.setState({
                 response: lodash__WEBPACK_IMPORTED_MODULE_4___default.a.pick(response, 'id', 'user_id', 'name')
@@ -84770,7 +84768,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 response = _context.sent;
-                if (response.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
                 result = response.products.length == 0 ? 'no hay resultados...' : '';
                 this.setState({
                   category: response,
@@ -85670,7 +85668,7 @@ var PostEdit = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               post = _context.sent;
-              if (post.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              post.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
               _context.next = 6;
               return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchAllData"])('tag');
 
@@ -86125,6 +86123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _api_crudActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api/crudActions */ "./resources/js/api/crudActions.js");
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spinner */ "./resources/js/components/Spinner.js");
+/* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../history */ "./resources/js/history.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
@@ -86152,6 +86151,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -86191,13 +86191,14 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 response = _context.sent;
+                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
                 this.setState({
                   post: response,
                   tags: response.tags,
                   loading: false
                 });
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -86513,7 +86514,7 @@ var ProductEdit = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               product = _context.sent;
-              if (product.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              product.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
               _context.next = 6;
               return Object(_api_crudActions__WEBPACK_IMPORTED_MODULE_3__["fetchAllData"])('category');
 
@@ -86735,7 +86736,6 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           errors = _this$state.errors,
           fields = _this$state.fields;
-      console.log('en el produt form', fields);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.onFormSubmit,
         className: "ui form"
@@ -87015,7 +87015,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 response = _context.sent;
-                if (response.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
                 this.setState({
                   product: response,
                   loading: false
@@ -87275,7 +87275,7 @@ var TagEdit = /*#__PURE__*/function (_React$Component) {
 
             case 2:
               response = _context.sent;
-              if (response.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+              response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
 
               _this.setState({
                 response: lodash__WEBPACK_IMPORTED_MODULE_4___default.a.pick(response, 'id', 'user_id', 'name')
@@ -87719,7 +87719,7 @@ var TagShow = /*#__PURE__*/function (_React$Component) {
 
               case 2:
                 response = _context.sent;
-                if (response.exception) _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
+                response.exception && _history__WEBPACK_IMPORTED_MODULE_5__["default"].push('/page-404');
                 result = response.posts.length == 0 ? 'no hay resultados...' : '';
                 this.setState({
                   tag: response,
@@ -87936,8 +87936,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\laragon2.0\www\kiteris-app\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\laragon2.0\www\kiteris-app\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\laragon2.0\www\react-app\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\laragon2.0\www\react-app\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

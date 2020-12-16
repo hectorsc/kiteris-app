@@ -16,7 +16,7 @@ class TagShow extends React.Component {
 
    async componentDidMount() {
       const response = await fetchData('tag', this.props.match.params.id);
-      if (response.exception) history.push('/page-404');
+      response.exception && history.push('/page-404');
       let result = response.posts.length == 0 ? 'no hay resultados...': '';
       this.setState({ 
          tag: response, 

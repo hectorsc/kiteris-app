@@ -13,7 +13,7 @@ class CategoryEdit extends React.Component {
 
    componentDidMount = async () => {
       const response = await fetchData('category', this.props.match.params.id);
-      if (response.exception) history.push('/page-404');
+      response.exception && history.push('/page-404');
       this.setState({ response: _.pick(response, 'id', 'user_id', 'name') });
    }
 

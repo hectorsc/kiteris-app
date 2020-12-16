@@ -16,7 +16,7 @@ class ProductShow extends React.Component {
 
    async componentDidMount() {
       const response = await fetchData('product', this.props.match.params.id);
-      if (response.exception) history.push('/page-404');
+      response.exception && history.push('/page-404');
       this.setState({ product: response, loading: false });
    }
 
