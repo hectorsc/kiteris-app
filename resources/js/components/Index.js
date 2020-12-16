@@ -1,22 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Switch } from 'react-router-dom';
-import history from '../history';
-import { routes } from '../routes';
+import App from './layouts/App';
 
 function Index() {
    return (
-      <div className="container">
-         <Router history={history}>
-            <Switch>
-               {
-                  routes.map((route, id)=> (
-                     <Route key={id} path={route.path} exact component={route.component} />   
-                  ))
-               }
-            </Switch>
-         </Router>
-      </div>
+      <App /> 
    );
 }
 

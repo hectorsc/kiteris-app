@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="container">
-   <div id="react-app"></div>  
-</div>
-
+   <div id="react-app" style="margin-top: -20px"></div>  
 @endsection
