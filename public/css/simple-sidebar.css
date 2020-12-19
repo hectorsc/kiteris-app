@@ -49,3 +49,18 @@
     margin-left: -15rem;
   }
 }
+
+.navbar-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: initial;
+  }
+
+  .navbar-mobile {
+    display: block;
+  }
+}
+

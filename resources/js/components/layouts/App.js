@@ -6,10 +6,18 @@ import history from '../../history';
 
 class App extends React.Component {
 
+   state = { menu: ''}
+
+   onClickMenuChange = () => {
+      let menu = this.state.menu === 'toggled' ? '' : 'toggled';
+      this.setState({ menu });
+   }
+
    render() {
+      const { menu } = this.state;
       return (
          <Router history={history}>
-            <div className="d-flex" id="wrapper toogled">
+            <div className={`d-flex ${menu}`} id="wrapper">
                <div className="bg-light border-right" id="sidebar-wrapper">
                   <div className="sidebar-heading">Menú </div>
                   <div className="list-group list-group-flush">
@@ -21,9 +29,15 @@ class App extends React.Component {
                   </div>
                </div>
                <div id="page-content-wrapper">
-                  {/* <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                  <button className="btn btn-primary" id="menu-toggle">Toggle Menu</button>
-                  </nav> */}
+                  <nav className="navbar navbar-mobile navbar-expand-lg navbar-light bg-light border-bottom">
+                  <button 
+                     className="btn btn-primary" 
+                     id="menu-toggle"
+                     onClick={this.onClickMenuChange}
+                  >
+                     <span className="navbar-toggler-icon"></span>
+                  </button>
+                  </nav>
                   <div className="container-fluid">
                      <div className="container" style={{ marginTop: '30px' }}>
                         <Routes />
