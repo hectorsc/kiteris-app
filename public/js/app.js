@@ -84509,6 +84509,7 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
     }());
 
     _this.initialStateValues = {
+      loading: props.initialValues ? true : false,
       fields: {
         name: ''
       },
@@ -84524,7 +84525,8 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
         this.setState({
-          fields: _objectSpread({}, this.props.initialValues)
+          fields: _objectSpread({}, this.props.initialValues),
+          loading: false
         });
       }
     }
@@ -84534,9 +84536,10 @@ var CategoryForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           errors = _this$state.errors,
           fields = _this$state.fields;
+      var loading = this.state.loading && 'loading';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.onFormSubmit,
-        className: "ui form"
+        className: "ui form ".concat(loading)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "field"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -85346,21 +85349,21 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "sidebar-heading"
       }, "Men\xFA "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "list-group list-group-flush"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         to: "/home",
-        className: "list-group-item list-group-item-action bg-light"
-      }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "list-group-item list-group-item-action"
+      }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         to: "/category",
-        className: "list-group-item list-group-item-action bg-light"
-      }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "list-group-item list-group-item-action"
+      }, "Categor\xEDas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         to: "/product",
-        className: "list-group-item list-group-item-action bg-light"
-      }, "Productos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "list-group-item list-group-item-action"
+      }, "Productos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         to: "/tag",
-        className: "list-group-item list-group-item-action bg-light"
-      }, "Etiquetas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "list-group-item list-group-item-action"
+      }, "Etiquetas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         to: "/post",
-        className: "list-group-item list-group-item-action bg-light"
+        className: "list-group-item list-group-item-action"
       }, "Noticias"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "page-content-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -85923,6 +85926,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
     }());
 
     _this.initialStateValues = {
+      loading: props.initialValues ? true : false,
       fields: {
         title: '',
         sub_title: '',
@@ -85941,6 +85945,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
         this.setState({
+          loading: false,
           fields: _objectSpread(_objectSpread({}, this.props.initialValues), {}, {
             tags: this.props.tagsActive
           })
@@ -85953,9 +85958,10 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           errors = _this$state.errors,
           fields = _this$state.fields;
+      var loading = this.state.loading && 'loading';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.onFormSubmit,
-        className: "ui form"
+        className: "ui form ".concat(loading)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "two fields"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -86738,6 +86744,7 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
     }());
 
     _this.initialStateValues = {
+      loading: props.initialValues ? true : false,
       fields: {
         name: '',
         REF: '',
@@ -86757,7 +86764,8 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
         this.setState({
-          fields: _objectSpread({}, this.props.initialValues)
+          fields: _objectSpread({}, this.props.initialValues),
+          loading: false
         });
       }
     }
@@ -86767,9 +86775,10 @@ var ProductForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           errors = _this$state.errors,
           fields = _this$state.fields;
+      var loading = this.state.loading && 'loading';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.onFormSubmit,
-        className: "ui form"
+        className: "ui form ".concat(loading)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "two fields"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -87491,6 +87500,7 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
     }());
 
     _this.initialStateValues = {
+      loading: props.initialValues ? true : false,
       fields: {
         name: ''
       },
@@ -87506,7 +87516,8 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
         this.setState({
-          fields: _objectSpread({}, this.props.initialValues)
+          fields: _objectSpread({}, this.props.initialValues),
+          loading: false
         });
       }
     }
@@ -87516,9 +87527,10 @@ var TagForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           errors = _this$state.errors,
           fields = _this$state.fields;
+      var loading = this.state.loading && 'loading';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.onFormSubmit,
-        className: "ui form"
+        className: "ui form ".concat(loading)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: " field"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {

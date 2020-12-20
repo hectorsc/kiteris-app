@@ -6,6 +6,7 @@ class ProductForm extends React.Component {
    constructor(props) {
       super(props);
       this.initialStateValues = {
+         loading: props.initialValues ? true : false,
          fields: { name: '', REF: '', price: '', offer_price: '', category_id: '' },
          errors: ''
       };
@@ -15,7 +16,7 @@ class ProductForm extends React.Component {
    //necesario para el editar
    componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
-         this.setState({fields: {...this.props.initialValues}});
+         this.setState({fields: {...this.props.initialValues}, loading: false});
       }
    }
    
@@ -42,8 +43,9 @@ class ProductForm extends React.Component {
 
    render() {
       const {errors, fields} = this.state;
+      const loading = this.state.loading && 'loading';
       return (
-         <form onSubmit={this.onFormSubmit} className="ui form">
+         <form onSubmit={this.onFormSubmit} className={`ui form ${loading}`}>
             <div className="two fields">
                <div className={errors.name ? 'field error' : 'field'}>
                   <label>Nombre</label>

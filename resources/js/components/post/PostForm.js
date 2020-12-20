@@ -9,6 +9,7 @@ class PostForm extends React.Component {
    constructor(props) {
       super(props);
       this.initialStateValues = {
+         loading: props.initialValues ? true : false,
          fields: { title: '', sub_title: '', body: '', tags: '' },
          errors: ''
       };
@@ -19,6 +20,7 @@ class PostForm extends React.Component {
    componentDidUpdate(prevProps) {
       if (prevProps.initialValues !== this.props.initialValues) {
          this.setState({
+            loading: false,
             fields: { ...this.props.initialValues, tags: this.props.tagsActive }
          });
       }
@@ -54,8 +56,9 @@ class PostForm extends React.Component {
 
    render() {
       const {errors, fields} = this.state;
+      const loading = this.state.loading && 'loading';
       return (
-         <form onSubmit={this.onFormSubmit} className="ui form">
+         <form onSubmit={this.onFormSubmit} className={`ui form ${loading}`}>
             <div className="two fields">
                <div className={errors.title ? 'field error' : 'field'}>
                   <label>Título</label>

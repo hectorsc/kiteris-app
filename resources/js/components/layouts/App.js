@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../../public/css/simple-sidebar.css';
-import { Link, Router } from 'react-router-dom';
+import { NavLink, Router } from 'react-router-dom';
 import Routes from './Routes';
 import history from '../../history';
 
@@ -21,11 +21,11 @@ class App extends React.Component {
                <div className="bg-light border-right" id="sidebar-wrapper">
                   <div className="sidebar-heading">Menú </div>
                   <div className="list-group list-group-flush">
-                     <Link to='/home' className="list-group-item list-group-item-action bg-light">Home</Link>
-                     <Link to='/category' className="list-group-item list-group-item-action bg-light">Categorías</Link>
-                     <Link to='/product' className="list-group-item list-group-item-action bg-light">Productos</Link>
-                     <Link to='/tag' className="list-group-item list-group-item-action bg-light">Etiquetas</Link>
-                     <Link to='/post' className="list-group-item list-group-item-action bg-light">Noticias</Link>
+                     <NavLink to='/home' className="list-group-item list-group-item-action">Home</NavLink>
+                     <NavLink to='/category' className="list-group-item list-group-item-action">Categorías</NavLink>
+                     <NavLink to='/product' className="list-group-item list-group-item-action">Productos</NavLink>
+                     <NavLink to='/tag' className="list-group-item list-group-item-action">Etiquetas</NavLink>
+                     <NavLink to='/post' className="list-group-item list-group-item-action">Noticias</NavLink>
                   </div>
                </div>
                <div id="page-content-wrapper">
