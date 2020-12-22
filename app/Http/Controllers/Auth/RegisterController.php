@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\RegisteredUserNotification;
+use App\Console\Commands\SendEmailAfterUserRegistrationCommand;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -29,15 +34,17 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+    private $user;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
         $this->middleware('guest');
+        $this->user = $user;
     }
 
     /**
@@ -69,5 +76,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered($user)
+    {
+        // Artisan::call(SendEmailAfterUserRegistrationCommand::class);
+        //ESTA FORMA ENVIA EL $user A LA NOTIFICACIÓN SIN PASAR POR EL COMANDO
+        $users = $this->user->getAdminUsers();
+        Notification::send($users, new RegisteredUserNotification($user));
     }
 }
